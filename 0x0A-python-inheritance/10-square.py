@@ -1,20 +1,24 @@
 #!/usr/bin/python3
+"""This module contains a class Square that inherits from Rectangle
+    (9-rectangle.py)
 """
-more class base
-"""
-
-
 Rectangle = __import__('9-rectangle').Rectangle
 
 
-"""
-Square class
-"""
-
-
 class Square(Rectangle):
-    """ Square Class """
+    """ class Square that inherits from Rectangle
+        (9-rectangle.py)
+
+    Arguments:
+        Rectangle (class) -- class
+    """
+
     def __init__(self, size):
-        """ instantiation with size """
+        """Instantiation with size.
+
+        Arguments:
+            size (int) -- size
+        """
+        super().integer_validator("size", size)
         self.__size = size
         super().__init__(self.__size, self.__size)
