@@ -1,24 +1,18 @@
 #!/usr/bin/python3
-"""This module contains a function that inserts a line of text
-    to a file, after each line containing a specific string.
+"""
+function that inserts a line of text to a file, after each line containing a specific string
 """
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """Inserts a line of text to a file, after each line containing a
-        specific string.
-
-    Keyword Arguments:
-        filename {str} -- [description] (default: {""})
-        search_string {str} -- [description] (default: {""})
-        new_string {str} -- [description] (default: {""})
-    """
-    str = ""
-    with open(filename, "r", encoding="utf-8") as file:
-        for line in file:
-            if search_string in line:
-                str += line[:] + new_string
-            else:
-                str += line
-    with open(filename, "w", encoding="utf-8") as file:
-        file.write(str)
+    '''module Search and update
+    '''
+    with open(filename, 'r+') as f:
+        lines = f.readlines()
+        i = 0
+        for line in lines:
+            if line.find(search_string) is not -1:
+                lines.insert(i + 1, new_string)
+            i += 1
+        f.seek(0)
+        f.write("".join(lines))
