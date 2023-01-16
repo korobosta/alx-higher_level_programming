@@ -169,7 +169,7 @@ class Base:
                     item = item.to_dictionary()
                     string += (str(item["id"]) + "," +
                                str(item["size"]) + "," +
-                               str(item["x"]) + "," + str(item["y"]))
+                               str(item["x"]) + "," +  str(item["y"]))
                     write_this.writerow(string)
 
     @classmethod
@@ -177,4 +177,5 @@ class Base:
         '''
             this is my method
         '''
+        
         return ([])
